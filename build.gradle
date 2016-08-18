@@ -11,12 +11,12 @@ repositories {
 
 dependencies {
   compile(
-      "org.jetbrains.kotlin:kotlin-stdlib:${kotlin_version}"
-      )
+          "org.jetbrains.kotlin:kotlin-stdlib:${kotlin_version}"
+  )
 
   testCompile(
-      "junit:junit:${junit_version}",
-      "org.jetbrains.kotlin:kotlin-test-junit:${kotlin_version}",
-      "org.jetbrains.spek:spek:+"
-      ) 
+          "junit:junit:${junit_version}",
+          "org.jetbrains.kotlin:kotlin-test-junit:${kotlin_version}",
+          "org.jetbrains.spek:spek:+"
+  )
 }
