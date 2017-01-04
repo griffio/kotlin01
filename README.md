@@ -2,12 +2,12 @@
 
 Gradle 3.0 supports [gradle-script-kotlin](https://github.com/gradle/gradle-script-kotlin)
 
-[Kotlin](https://kotlinlang.org/) base project 1.0.4
+[Kotlin](https://kotlinlang.org/) base project 1.0.6
 [Spek](https://jetbrains.github.io/spek/)
 
 ~~~ groovy
 plugins {
-  id 'nebula.kotlin' version '1.0.4'
+  id 'nebula.kotlin' version '1.0.6'
 }
 
 repositories {
