@@ -7,7 +7,7 @@ Gradle 3.0 supports [gradle-script-kotlin](https://github.com/gradle/gradle-scri
 
 ~~~ groovy
 plugins {
-  id 'nebula.kotlin' version '1.0.6'
+  id "com.zoltu.kotlin" version "1.0.6"
 }
 
 repositories {
