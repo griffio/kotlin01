@@ -1,66 +1,39 @@
 # Kotlin 01
 
-Gradle 3.0 supports [gradle-script-kotlin](https://github.com/gradle/gradle-script-kotlin)
-
-[Kotlin](https://kotlinlang.org/) base project 1.0.6
-[Spek](https://jetbrains.github.io/spek/)
+[Kotlin](https://kotlinlang.org/) base project 1.1.3
+[Kotlin Test](https://github.com/kotlintest/kotlintest)
 
 ~~~ groovy
+
 plugins {
-  id "com.zoltu.kotlin" version "1.0.6"
+  id "application"
+  id "org.jetbrains.kotlin.jvm" version "1.1.3-2"
 }
+
+project.ext.sourceCompatibility = "1.8"
+project.ext.targetCompatibility = "1.8"
+
+//Main is compiled to MainKt
+project.mainClassName = "griffio.MainKt"
 
 repositories {
   mavenCentral()
-  maven {
-    url "http://repository.jetbrains.com/all"
-  }
 }
 
 dependencies {
+  //if JDK 8, you can use extended versions of the Kotlin standard library which
+  // contain additional extension functions for APIs added in new JDK versions.
   compile(
-      "org.jetbrains.kotlin:kotlin-stdlib:${kotlin_version}"
-      )
+      "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
+  )
 
   testCompile(
-      "junit:junit:${junit_version}",
-      "org.jetbrains.kotlin:kotlin-test-junit:${kotlin_version}",
-      "org.jetbrains.spek:spek:+"
-      ) 
-}
-~~~
-
-Plugins dsl is not supported yet in kotlin gradle scripts
-
-~~~ kotlin
-
-buildscript {
-
-  repositories {
-    gradleScriptKotlin()
-  }
-
-  dependencies {
-    classpath(kotlinModule("gradle-plugin"))
-  }
+      "io.kotlintest:kotlintest:$kotlin_test"
+  )
 }
 
-apply {
-  plugin("kotlin")
-  plugin<ApplicationPlugin>()
-}
-
-configure<ApplicationPluginConvention> {
-  mainClassName = "MainKt"
-}
-
-repositories {
-  gradleScriptKotlin()
-}
-
-dependencies {
-  compile(kotlinModule("stdlib"))
-  testCompile("org.jetbrains.spek:spek:+")
+task wrapper(type: Wrapper) {
+  gradleVersion = '4.0'
 }
 
 ~~~

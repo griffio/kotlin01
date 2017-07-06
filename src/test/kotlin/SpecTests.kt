@@ -1,11 +1,10 @@
-import org.jetbrains.spek.api.Spek
-import kotlin.test.assertEquals
+import io.kotlintest.matchers.shouldBe
+import io.kotlintest.specs.StringSpec
 
-class SpecTests : Spek({
-
-  val result = 10
-
-  it("result equals 10") {
-    assertEquals(result, 10)
+class MyTests : StringSpec() {
+  init {
+    "strings.length should return size of string" {
+      "hello".length shouldBe 5
+    }
   }
-})
+}
