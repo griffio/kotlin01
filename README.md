@@ -1,13 +1,13 @@
 # Kotlin 01
 
-[Kotlin](https://kotlinlang.org/) base project 1.1.3
+[Kotlin](https://kotlinlang.org/) base project 1.1.4
 [Kotlin Test](https://github.com/kotlintest/kotlintest)
 
 ~~~ groovy
 
 plugins {
   id "application"
-  id "org.jetbrains.kotlin.jvm" version "1.1.3-2"
+  id "org.jetbrains.kotlin.jvm" version "1.1.4"
 }
 
 project.ext.sourceCompatibility = "1.8"
