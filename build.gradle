@@ -1,6 +1,6 @@
 plugins {
   id "application"
-  id "org.jetbrains.kotlin.jvm" version "1.1.4-3"
+  id "org.jetbrains.kotlin.jvm" version "1.1.50"
 }
 
 project.ext.sourceCompatibility = "1.8"
@@ -31,7 +31,7 @@ compileKotlin {
     languageVersion	= "1.1"
     suppressWarnings = false
     verbose	= false
-    freeCompilerArgs = ["-Xjsr305-annotations", "enable"]
+    freeCompilerArgs = ["-Xjsr305 ", "strict"]
   }
 }
 
