@@ -1,14 +1,21 @@
 package griffio
 
-fun main(args : Array<String>) {
+import java.io.BufferedReader
+import java.io.FileReader
 
-    println("Hello, world!")
+fun main(args: Array<String>) {
 
-    val n = 1..10
-    for ( (index, value) in n.withIndex() ) { println("$index $value") }
+    val spaces = " ".toRegex()
 
-    for (i in (1..10).filter { it > 5 }) {
-        println(i)
+    fun splitToWords(line: String): Sequence<String> = line.split(spaces).asSequence()
+
+    val words = "words.txt" // file required
+
+    val wordCount = BufferedReader(FileReader(words)).use { read ->
+        read.lineSequence().flatMap(::splitToWords).groupingBy { it }.eachCount()
     }
 
+    wordCount.forEach {
+        println("Word: ${it.key} Count: ${it.value}")
+    }
 }

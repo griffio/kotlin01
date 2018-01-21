@@ -1,6 +1,6 @@
 plugins {
   id "application"
-  id "org.jetbrains.kotlin.jvm" version "1.1.50"
+  id "org.jetbrains.kotlin.jvm" version "1.2.20"
 }
 
 project.ext.sourceCompatibility = "1.8"
@@ -27,8 +27,8 @@ dependencies {
 
 compileKotlin {
   kotlinOptions {
-    apiVersion = "1.1"
-    languageVersion	= "1.1"
+    apiVersion = "1.2"
+    languageVersion	= "1.2"
     suppressWarnings = false
     verbose	= false
     freeCompilerArgs = ["-Xjsr305 ", "strict"]
@@ -36,5 +36,5 @@ compileKotlin {
 }
 
 task wrapper(type: Wrapper) {
-  gradleVersion = '4.0'
+  gradleVersion = '4.4.1'
 }
