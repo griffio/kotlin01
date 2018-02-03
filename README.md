@@ -24,7 +24,7 @@ dependencies {
   //if JDK 8, you can use extended versions of the Kotlin standard library which
   // contain additional extension functions for APIs added in new JDK versions.
   compile(
-      "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
+      "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
   )
 
   testCompile(
